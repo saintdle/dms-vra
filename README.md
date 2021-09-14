@@ -21,3 +21,5 @@ Within vRA
 * Link Day 2 Actions
 * Create a cloud template that consumes the Custom Resource
 * Release cloud template to the service broker, configure catalog item to use vRO action "get_configuration_values" to populate the template version as a drop down list for the user to select from
+
+![](https://i0.wp.com/veducate.co.uk/wp-content/uploads/2021/09/DMS-Create-DB-operation-Completed.jpg?resize=768%2C448&ssl=1)
