@@ -1,0 +1,175 @@
+layout:
+  pages:
+    - id: page_general
+      sections:
+        - id: section_project
+          fields:
+            - id: project
+              display: dropDown
+              signpostPosition: right-middle
+        - id: section_deploymentName
+          fields:
+            - id: deploymentName
+              display: textField
+              signpostPosition: right-middle
+        - id: section_adminUser
+          fields:
+            - id: adminUser
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_adminPassword
+          fields:
+            - id: adminPassword
+              display: passwordField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_cpuCores
+          fields:
+            - id: cpuCores
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_memory
+          fields:
+            - id: memory
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_diskSize
+          fields:
+            - id: diskSize
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_automatedBackupStartTime
+          fields:
+            - id: automatedBackupStartTime
+              display: dropDown
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_databaseVersion
+          fields:
+            - id: databaseVersion
+              display: dropDown
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_dbName
+          fields:
+            - id: dbName
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+        - id: section_instanceName
+          fields:
+            - id: instanceName
+              display: textField
+              state:
+                visible: true
+                read-only: false
+              signpostPosition: right-middle
+      title: General
+      state: {}
+schema:
+  project:
+    label: Project
+    type:
+      dataType: string
+      isMultiple: false
+    valueList:
+      id: projects
+      type: scriptAction
+    constraints:
+      required: true
+  deploymentName:
+    label: Deployment Name
+    type:
+      dataType: string
+      isMultiple: false
+    constraints:
+      required: true
+      max-value: 80
+  adminUser:
+    label: DB Admin User Account Name
+    type:
+      dataType: string
+      isMultiple: false
+    default: admin
+  adminPassword:
+    label: DB Admin User Password
+    type:
+      dataType: secureString
+      isMultiple: false
+    default: VMware1!VMware1!
+  cpuCores:
+    label: Number of CPUs
+    type:
+      dataType: string
+      isMultiple: false
+    default: '4'
+  memory:
+    label: Memory (GB)
+    type:
+      dataType: string
+      isMultiple: false
+    default: '4'
+  diskSize:
+    label: Disk Size (GB)
+    type:
+      dataType: string
+      isMultiple: false
+    default: '100'
+  automatedBackupStartTime:
+    label: Automated Backup Start Time
+    type:
+      dataType: string
+      isMultiple: false
+    default: '06:00'
+    valueList:
+      - label: '06:00'
+        value: '06:00'
+      - label: '08:00'
+        value: '08:00'
+      - label: '23:00'
+        value: '23:00'
+  databaseVersion:
+    label: Database Version
+    type:
+      dataType: string
+      isMultiple: false
+    default: POSTGRES 12.7.0
+    valueList:
+      id: com.vmware.dms/get_configuration_values
+      type: scriptAction
+      parameters: []
+    constraints: {}
+  dbName:
+    label: Database Name
+    type:
+      dataType: string
+      isMultiple: false
+    default: db
+  instanceName:
+    label: instance Name
+    type:
+      dataType: string
+      isMultiple: false
+    default: instance
+options:
+  externalValidations: []
