@@ -1,0 +1,58 @@
+formatVersion: 1
+inputs:
+  adminUser:
+    type: string
+    title: DB Admin User Account Name
+    default: admin
+  adminPassword:
+    type: string
+    title: DB Admin User Password
+    encrypted: true
+    default: VMware1!VMware1!
+  cpuCores:
+    type: string
+    title: Number of CPUs
+    default: '4'
+  memory:
+    type: string
+    title: Memory (GB)
+    default: '4'
+  diskSize:
+    type: string
+    title: Disk Size (GB)
+    default: '100'
+  automatedBackupStartTime:
+    type: string
+    default: '06:00'
+    enum:
+      - '06:00'
+      - '08:00'
+      - '23:00'
+    title: Automated Backup Start Time
+  databaseVersion:
+    type: string
+    title: Database Version
+    default: POSTGRES 12.7.0
+  dbName:
+    type: string
+    title: Database Name
+    default: db
+  instanceName:
+    type: string
+    title: instance Name
+    default: instance
+resources:
+  Custom_dms_database_1:
+    type: Custom.dms.database
+    properties:
+      adminPassword: '${input.adminPassword}'
+      adminUser: '${input.adminUser}'
+      automatedBackupStartTime: '${input.automatedBackupStartTime}'
+      cpuCores: '${input.cpuCores}'
+      memory: '${input.memory}'
+      databaseVersion: '${input.databaseVersion}'
+      dbName: '${input.dbName}'
+      numLocalBackupDays: 3
+      numRemoteBackupDays: 6
+      instanceName: '${input.instanceName}'
+      diskSize: '${input.diskSize}'
