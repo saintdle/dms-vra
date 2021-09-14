@@ -3,10 +3,10 @@
 File repository for configuring vRealize Automation workflows to interact with Data Management for VMware Tanzu to provide Self-Service capabilities within vRA Service Broker.
 
 Full technical walkthrough on how to configure these packages:
-    Blog Post
-        <http://vexpert.me/dms-tanzu-vra>
-    Recording
-        <https://youtu.be/L_3DcejGKzM>
+
+>    Blog Post - http://vexpert.me/dms-tanzu-vra
+>     
+>    Recording - https://youtu.be/L_3DcejGKzM
 
 ## High Level Steps
 
