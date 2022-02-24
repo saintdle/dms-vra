@@ -6,6 +6,7 @@ Full technical walkthrough on how to configure these packages:
 
 >    Blog Post 
 >    - [Data Management for VMware Tanzu with vRealize Automation as Custom Resources](http://vexpert.me/dms-tanzu-vra)
+>       - Updated Feb 2022 - now includes the changes needed to support DMS v1.1
 >    - [How to create vRO Dynamic Types for vRA Custom Resources](http://vexpert.me/vra-dynamic-types)
 >    
 >    Recording 
